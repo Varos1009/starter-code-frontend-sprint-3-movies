@@ -293,9 +293,19 @@ describe('Function "orderByYear"', () => {
 // Exercise 6
 // YOUR CODE HERE. Test moviesAverageByCategory()
 describe('Function "moviesAverageByCategory"', () => {
-  it('ADD YOUR CODE IN films.spec.js file', () => {
-    expect(typeof hoursToMinutes).toBe('coffee');
+  it('should be declared', () => {
+    expect(typeof moviesAverageByCategory).toBe('function');
   });
+  
+  it('should return a number', () => {
+    expect(typeof moviesAverageByCategory(movies, "Sci-Fi")).toBe("number");
+  });
+
+  it('should return the correct average score for "Sci-Fi" movies', () => {
+    const result = moviesAverageByCategory(movies, "Sci-Fi");
+    expect(result).toBeCloseTo(8.34, 1); // Comprova que la mitjana és aproximadament 8.4
+  });
+
 });
 
 // Exercise 7
